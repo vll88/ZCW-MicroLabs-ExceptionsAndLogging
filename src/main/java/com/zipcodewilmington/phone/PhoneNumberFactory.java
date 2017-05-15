@@ -62,7 +62,7 @@ public final class PhoneNumberFactory {
             return createPhoneNumber(myphonenum);
         }
         catch(InvalidPhoneNumberFormatException myphonenum){
-            logger.info(areaCode+centralOfficeCode+phoneLineCode+"is not a valid phone number");
+            logger.info("("+areaCode+")"+centralOfficeCode+phoneLineCode+"is not a valid phone number");
             return null;
         }
         //return null;
@@ -78,8 +78,9 @@ public final class PhoneNumberFactory {
         //*****************VL:just need to add throw statement here! no need for try/catch
 
         PhoneNumber myphonenum = new PhoneNumber(phoneNumberString);
-        logger.info("Attempting to create a new PhoneNumber object with a value of"+myphonenum.getAreaCode()+
-                myphonenum.getCentralOfficeCode()+myphonenum.getPhoneLineCode());
+        //logger.info("Attempting to create a new PhoneNumber object with a value of"+myphonenum.getAreaCode()+
+        //        myphonenum.getCentralOfficeCode()+myphonenum.getPhoneLineCode());
+        logger.info("Attempting to create a new PhoneNumber object with a value of "+phoneNumberString);
         return myphonenum;    //return myphonenum--to be used in #Q2
     }
 }
